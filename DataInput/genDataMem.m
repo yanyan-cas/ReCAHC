@@ -11,7 +11,8 @@ function dataset = genDataMem(Td, D, M, S)
 % channel D+1 the distractor input, and the channel D+2 the cue.
 
 L = Td + 2*M;
-dataset = zeros(L, 2*(D+2), S);
+dataset= zeros(L, 2*(D+2), S);
+
 for i = 1:S
     %%% input
     % compute binary payload sequence
@@ -31,5 +32,4 @@ for i = 1:S
     for t = 1:M
         dataset(end-M+t, (D+2)+bits(t),i) = 1;
     end
-    
 end
